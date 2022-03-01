@@ -29,9 +29,40 @@ namespace SkyBoard
 
         }
 
+        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void ButtonHistory_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ButtonSmiley_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void ButtonAnimals_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonFlower_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonSettings_Click(object sender, RoutedEventArgs e)
+        {
+            _ContentFrame.Content = null;
+        }
+
+        private void ButtonInfo_Click(object sender, RoutedEventArgs e)
+        {
+            _ContentFrame.Content = null;
+            _ContentFrame.Navigate(new InfoPage());
         }
     }
 }

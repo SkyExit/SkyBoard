@@ -1,0 +1,29 @@
+﻿<Page x:Class="SkyBoard.InfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SkyBoard"
+      mc:Ignorable="d"
+      Title="Window1" Height="590" Width="400">
+
+    <Grid>
+        <ScrollViewer>
+            <Grid>
+                <TextBlock x:Name="InfoTextBlock" FontSize="18" HorizontalAlignment="Center">
+                        <Run FontSize="32" Text=" v1.2.1" Foreground="White"/> 
+                        <Run FontSize="13" Text="       Added project to GitHub" Foreground="White"/>
+                    <LineBreak/>
+                        <Run FontSize="32" Text=" v1.2.0" Foreground="White"/> 
+                        <Run FontSize="13" Text="       Added this information page" Foreground="White"/>
+                    <LineBreak/>
+                        <Run FontSize="32" Text=" v1.1.0" Foreground="White"/> 
+                        <Run FontSize="13" Text="       Added navigation buttons" Foreground="White"/>
+                    <LineBreak/>
+                        <Run FontSize="32" Text=" v1.0.0" Foreground="White"/> 
+                        <Run FontSize="13" Text="       Created the project" Foreground="White"/>
+                </TextBlock>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

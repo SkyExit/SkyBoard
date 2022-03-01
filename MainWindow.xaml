@@ -11,23 +11,32 @@
         ResizeMode="NoResize"
         Background="#1f1d19"
         Title="SkyBoard" Height="650" Width="400">
-    <Grid Margin="0,15,0,555">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="255*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,0,10,0">
-            <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHistory_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                <materialDesign:PackIcon Kind="Search" Foreground="#FFA2A2A2" Width="25" Height="25" />
-            </Button>
-            <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHistory_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                <materialDesign:PackIcon Kind="Clock" Foreground="#FFA2A2A2" Width="25" Height="25" />
-            </Button>
-            <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHistory_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                <materialDesign:PackIcon Kind="Smiley" Foreground="#FFA2A2A2" Width="25" Height="25" />
-            </Button>
-            <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHistory_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                <materialDesign:PackIcon Kind="Bee" Foreground="#FFA2A2A2" Width="25" Height="25" />
-            </Button>
-        </StackPanel>
+    <Grid>
+        <Grid x:Name="ControllGrid" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center">
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonSearch_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Search" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHistory_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Clock" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonSmiley_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Smiley" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonAnimals_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Dog" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonFlower_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Flower" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonSettings_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Settings" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonInfo_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="InfoCircle" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Frame x:Name="_ContentFrame" NavigationUIVisibility="Hidden" Margin="0,60,0,0"/>
     </Grid>
 </Window>
