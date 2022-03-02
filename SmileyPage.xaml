@@ -6,7 +6,7 @@
       xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
       xmlns:local="clr-namespace:SkyBoard" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d"
-      Title="Window1" Height="590" Width="400">
+      Title="Window1" Width="400">
 
     <Grid x:Name="SmileyGrid"/>
 </Page>

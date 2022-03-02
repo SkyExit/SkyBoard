@@ -63,6 +63,9 @@ namespace SkyBoard
 
         private void buildList()
         {
+            versionList.Add("v1.6.3");
+            descriptionList.Add("Cleaned up code and implemented \nmany new emojis");
+
             versionList.Add("v1.5.9");
             descriptionList.Add("Played a bit with the displaying and \nimplemented the first coloed emojis");
 

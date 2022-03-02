@@ -12,7 +12,7 @@ namespace SkyBoard
 
         private int columnCount = 8-1; //Spalten
         private int tempC = 0;
-        private int rowCount = 12-1; //Zeilen
+        private int rowCount;
         private int tempR = 0;
 
         public SmileyPage()
@@ -20,9 +20,11 @@ namespace SkyBoard
             InitializeComponent();
             createEmojiList();
 
+            rowCount = smi.Length / 8;
+
             Grid myGrid = SmileyGrid;
 
-            myGrid.Height = 590;
+            myGrid.Height = (590/12)*(rowCount+1);
             myGrid.Width = 360;
             myGrid.Margin = new Thickness(5, 0, 20, 0);
             myGrid.ShowGridLines = false;
@@ -38,18 +40,10 @@ namespace SkyBoard
             myGrid.ColumnDefinitions.Add(new ColumnDefinition());
             myGrid.ColumnDefinitions.Add(new ColumnDefinition());
 
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
-            myGrid.RowDefinitions.Add(new RowDefinition());
+            for(int b = 0; b <= rowCount; b++)
+            {
+                myGrid.RowDefinitions.Add(new RowDefinition());
+            }
 
             for (int i = 0; i < smi.Length; i++)
             {
@@ -89,10 +83,13 @@ namespace SkyBoard
         public void createEmojiList()
         {
 
-        sSmiley = "😀,😃,😄,😁,😆,😅,🤣,😂,🙂,🙃,😉,😊,😇,🥰,😍,🤩,😘,😗,😚,😙,😋,😛,😜,🤪," + 
-                "😝,🤑,🤗,🤭,🤫,🤔,🤐,🤨,😐,😑,😶,😶,‍😏,😒,🙄,😬,😮,‍💨,🤥,😌,😔,😪,🤤," + 
-                "😴,😷,🤒,🤕,🤢,🤮,🤧,🥵,🥶,🥴,😵,😵,‍💫,🤯,🤠,🥳,😎,🤓,🧐,😕,😟,🙁,😮,😯," + 
-                "😲,😳,🥺,😦,😧,😨,😰,😥,😢,😭,😱,😖,😣,😞,😓,😩,😫,🥱,😤,😡,😠,🤬";
+        sSmiley = "😀,😃,😄,😁,😆,😅,😂,🤣,😭,😉,😗,😙,😚,😘,🥰,😍,🤩,🥳,🙃,🙂,😋,😛,😝,😜,🤪,😇,😊,☺️,😏," +
+                "😌,😔,😑,😐,😶,🤔,🤫,🤭,🤗,😱,🤨,🧐,😒,🙄,😤,😠,😡,🤬,🥺,😟,😥,😢,☹️,🙁,😕,🤐,😰,😨,😧,😦," +
+                "😮,😯,😲,😳,🤯,😬,😓,😞,😖,😣,😩,😫,😵,😴,😪,🤤,🌛,🌜,🌚,🌝,🌞,🥴,🥵,🥶,🤢,🤮,🤧,🤒,🤕,😷,🤠" + 
+                ",🤑,😎,🤓,🤥,🤡,👻,💩,👽,🤖,🎃,😈,👿,👹,👺,👀,👁,️🔥,💫,⭐,🌟,✨,💥,💯,💢,💨,💦,💤,🕳,🎉," + 
+                "🎊,🙈,🙉,🙊,😺,😸,😹,😻,😼,😽,🙀,😿,😾,❤️,🧡,💛,💚,💙,💜,🖤,♥️,💘,💝,💖,💗,💓,💞,💕,💌,💟,❣️," + 
+                "💔,💋,👥,m,👤,🗣,️👣,🧠,🦠,🦷,🦴,☠️,💀,👄,👅,👃,👂,🦶,🦵,💪,👍,👎,👏,🙌,👐,🤲,🤝,🤜,🤛,✊,👊,🤚," + 
+                "👋,🖐,️✋,🖖,🤟,🤘,✌️,🤞,🤙,👌,🖕,☝️,👆,👇,👉,👈,✍️,🤳,🙏,💅";
         smi = sSmiley.Split(",");
         }
     }
