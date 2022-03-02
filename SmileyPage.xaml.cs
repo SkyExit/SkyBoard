@@ -1,0 +1,99 @@
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+
+namespace SkyBoard
+{
+    public partial class SmileyPage : Page
+    {
+        public static String sSmiley;
+        public static String[] smi;
+
+        private int columnCount = 8-1; //Spalten
+        private int tempC = 0;
+        private int rowCount = 12-1; //Zeilen
+        private int tempR = 0;
+
+        public SmileyPage()
+        {
+            InitializeComponent();
+            createEmojiList();
+
+            Grid myGrid = SmileyGrid;
+
+            myGrid.Height = 590;
+            myGrid.Width = 360;
+            myGrid.Margin = new Thickness(5, 0, 20, 0);
+            myGrid.ShowGridLines = false;
+            myGrid.HorizontalAlignment = HorizontalAlignment.Center;
+            myGrid.VerticalAlignment = VerticalAlignment.Top;
+
+            myGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            myGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            myGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            myGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            myGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            myGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            myGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            myGrid.ColumnDefinitions.Add(new ColumnDefinition());
+
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+            myGrid.RowDefinitions.Add(new RowDefinition());
+
+            for (int i = 0; i < smi.Length; i++)
+            {
+                if(tempC > columnCount)
+                {
+                    tempC = 0;
+                    tempR++;
+                    if(tempR > rowCount)
+                    {
+                        return;
+                    }
+                }
+
+                Emoji.Wpf.TextBlock txt1 = new Emoji.Wpf.TextBlock();
+                txt1.Text = smi[i];
+                txt1.FontSize = 35;
+                txt1.TextAlignment = TextAlignment.Center;
+                txt1.HorizontalAlignment = HorizontalAlignment.Center;
+                txt1.MouseLeftButtonDown += ButDeletOnPreviewMouseDown;
+
+                Grid.SetColumnSpan(txt1, 1);
+                Grid.SetColumn(txt1, tempC);
+                Grid.SetRow(txt1, tempR);
+
+                myGrid.Children.Add(txt1);
+
+                tempC++;
+            }
+        }
+
+        private void ButDeletOnPreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Emoji.Wpf.TextBlock textBlock = (Emoji.Wpf.TextBlock)sender;
+            System.Windows.Clipboard.SetText(textBlock.Text);
+        }
+
+        public void createEmojiList()
+        {
+
+        sSmiley = "😀,😃,😄,😁,😆,😅,🤣,😂,🙂,🙃,😉,😊,😇,🥰,😍,🤩,😘,😗,😚,😙,😋,😛,😜,🤪," + 
+                "😝,🤑,🤗,🤭,🤫,🤔,🤐,🤨,😐,😑,😶,😶,‍😏,😒,🙄,😬,😮,‍💨,🤥,😌,😔,😪,🤤," + 
+                "😴,😷,🤒,🤕,🤢,🤮,🤧,🥵,🥶,🥴,😵,😵,‍💫,🤯,🤠,🥳,😎,🤓,🧐,😕,😟,🙁,😮,😯," + 
+                "😲,😳,🥺,😦,😧,😨,😰,😥,😢,😭,😱,😖,😣,😞,😓,😩,😫,🥱,😤,😡,😠,🤬";
+        smi = sSmiley.Split(",");
+        }
+    }
+}

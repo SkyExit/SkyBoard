@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace SkyBoard
 {
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -26,7 +27,7 @@ namespace SkyBoard
 
         private void MainScreen()
         {
-
+            _ContentFrame.Navigate(new SmileyPage());
         }
 
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
@@ -41,7 +42,7 @@ namespace SkyBoard
 
         private void ButtonSmiley_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainScreen();
         }
 
         private void ButtonAnimals_Click(object sender, RoutedEventArgs e)
@@ -56,12 +57,11 @@ namespace SkyBoard
 
         private void ButtonSettings_Click(object sender, RoutedEventArgs e)
         {
-            _ContentFrame.Content = null;
+
         }
 
         private void ButtonInfo_Click(object sender, RoutedEventArgs e)
         {
-            _ContentFrame.Content = null;
             _ContentFrame.Navigate(new InfoPage());
         }
     }

@@ -9,20 +9,21 @@
 
     <Grid>
         <ScrollViewer>
-            <Grid>
-                <TextBlock x:Name="InfoTextBlock" FontSize="18" HorizontalAlignment="Center">
-                        <Run FontSize="32" Text=" v1.2.1" Foreground="White"/> 
-                        <Run FontSize="13" Text="       Added project to GitHub" Foreground="White"/>
-                    <LineBreak/>
-                        <Run FontSize="32" Text=" v1.2.0" Foreground="White"/> 
-                        <Run FontSize="13" Text="       Added this information page" Foreground="White"/>
-                    <LineBreak/>
-                        <Run FontSize="32" Text=" v1.1.0" Foreground="White"/> 
-                        <Run FontSize="13" Text="       Added navigation buttons" Foreground="White"/>
-                    <LineBreak/>
-                        <Run FontSize="32" Text=" v1.0.0" Foreground="White"/> 
-                        <Run FontSize="13" Text="       Created the project" Foreground="White"/>
-                </TextBlock>
+            <Grid x:Name="InfoGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140*" />
+                    <ColumnDefinition Width="243*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
             </Grid>
         </ScrollViewer>
     </Grid>
