@@ -5,6 +5,7 @@ Installation:
 - Install & Enjoy
 
 ToDo-List:
+- Update check
 - Search emojis by name
 - History saves on quit
 - Animals, Flowers and more
