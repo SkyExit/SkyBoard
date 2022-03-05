@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SkyBoard
 {
@@ -20,12 +11,34 @@ namespace SkyBoard
 
         public static MainWindow Instance { get; private set; }
 
+        private String version = "v0.9.7";
+        private String darkModeColor = "#1f1d19";
+        private String whiteModeColor = "#f0f0f0";
+
         public MainWindow()
         {
             InitializeComponent();
 
             MainScreen();
             Instance = this;
+
+            switchDarkMode(Properties.Settings.Default.DarkMode);
+        }
+
+        public void switchDarkMode(bool state)
+        {
+            MainWindow mw = MainWindow.Instance;
+
+            if (state)
+            {
+                //DarkMode
+                mw.Background = (SolidColorBrush)new BrushConverter().ConvertFromString(darkModeColor);
+            }
+            else
+            {
+                //WhiteMode
+                mw.Background = (SolidColorBrush)new BrushConverter().ConvertFromString(whiteModeColor);
+            }
         }
 
         public static async Task copyToClipboard(String emoji, bool addToHistory)
@@ -83,7 +96,7 @@ namespace SkyBoard
 
         private void ButtonSettings_Click(object sender, RoutedEventArgs e)
         {
-
+            _ContentFrame.Navigate(new SettingsPage(version));
         }
     }
 }

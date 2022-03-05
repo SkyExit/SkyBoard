@@ -9,7 +9,6 @@
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Background="#1f1d19"
         Title="SkyBoard" Height="650" Width="400">
     <Grid>
         <Grid x:Name="ControllGrid" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">

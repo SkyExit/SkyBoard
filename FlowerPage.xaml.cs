@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SkyBoard
 {
@@ -50,7 +40,7 @@ namespace SkyBoard
             myGrid.ColumnDefinitions.Add(new ColumnDefinition());
             myGrid.ColumnDefinitions.Add(new ColumnDefinition());
 
-            for (int b = 0; b <= rowCount; b++)
+            for (int b = 0; b <= rowCount - 1; b++) //-1 Weil sonst eine Zeile abstand ist
             {
                 myGrid.RowDefinitions.Add(new RowDefinition());
             }
