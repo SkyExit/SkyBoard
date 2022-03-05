@@ -1,22 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
-using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace SkyBoard
 {
-    public partial class SmileyPage : Page
+    public partial class AnimalPage : Page
     {
         public static String sSmiley;
         public static String[] smi;
 
-        private int columnCount = 8-1; //Spalten
+        private int columnCount = 8 - 1; //Spalten
         private int tempC = 0;
         private int rowCount;
         private int tempR = 0;
 
-        public SmileyPage()
+        public AnimalPage()
         {
             InitializeComponent();
             createEmojiList();
@@ -25,7 +34,7 @@ namespace SkyBoard
 
             Grid myGrid = SmileyGrid;
 
-            myGrid.Height = (590/12)*(rowCount+1);
+            myGrid.Height = (590 / 12) * (rowCount + 1);
             myGrid.Width = 360;
             myGrid.Margin = new Thickness(5, 0, 20, 0);
             myGrid.ShowGridLines = false;
@@ -41,18 +50,18 @@ namespace SkyBoard
             myGrid.ColumnDefinitions.Add(new ColumnDefinition());
             myGrid.ColumnDefinitions.Add(new ColumnDefinition());
 
-            for(int b = 0; b <= rowCount; b++)
+            for (int b = 0; b <= rowCount; b++)
             {
                 myGrid.RowDefinitions.Add(new RowDefinition());
             }
 
             for (int i = 0; i < smi.Length; i++)
             {
-                if(tempC > columnCount)
+                if (tempC > columnCount)
                 {
                     tempC = 0;
                     tempR++;
-                    if(tempR > rowCount)
+                    if (tempR > rowCount)
                     {
                         return;
                     }
@@ -83,10 +92,10 @@ namespace SkyBoard
 
         public void createEmojiList()
         {
-        sSmiley = "😀,😃,😄,😁,😆,😅,🤣,😂,🙂,🙃,😉,😊,😇,🥰,😍,🤩,😘,😗,☺️,😚,😙,🥲,😋,😛,😜,🤪,😝,🤑,🤗,🤭,🤫,🤔,🤐,🤨,😐,😑,😶," + 
-                "😏,😒,🙄,😬,😮,💨,🤥,😌,😔,😪,🤤,😴,😷,🤒,🤕,🤢,🤮,🤧,🥵,🥶,🥴,😵,💫,🤯,🤠,🥳,🥸,😎,🤓,🧐,😕,😟,🙁,☹️,😮,😯,😳," + 
-                "🥺,😦,😧,😨,😰,😥,😢,😭,😱,😖,😣,😞,😓,😩,😫,🥱,😤,😡,😠,🤬,😈,👿,💀,☠️,💩,🤡,👹,👺,👻,👽,👾,🤖,😺,😸,😹,😻,😼,😽," + 
-                "🙀,😿,😾,🙈,🙉,🙊";
+            sSmiley = "🐵,🐒,🦍,🦧,🐶,🐕,🦮,🐕,‍🦺,🐩,🐺,🦊,🦝,🐱,🐈,🦁,🐯,🐅,🐆,🐴,🐎,🦄,🦓,🦌," + 
+                "🦬,🐮,🐂,🐃,🐄,🐷,🐖,🐗,🐽,🐏,🐑,🐐,🐪,🐫,🦙,🦒,🐘,🦣,🦏,🦛,🐭,🐁,🐀,🐹,🐰,🐇,🦫,🐿,🦔," + 
+                "🦇,🐻,‍❄️,🐨,🐼,🦥,🦦,🦨,🦘,🦡,🐾,🦃,🐔,🐓,🐣,🐤,🐥,🐦,🐧,🕊,🦅,🦆,🦢,🦉,🦤,🪶,🦩,🦚," +
+                "🦜,🐸,🐊,🐢,🦎,🐍,🐲,🐉,🦕,🦖,🐳,🐋,🐬,🦭,🐟,🐠,🐡,🦈,🐙,🐚,🐌,🦋,🐛,🐜,🐝,🪲,🐞,🦗,🪳,🕷,🕸,🦂,🦟,🪰,🪱,🦠";
             smi = sSmiley.Split(",");
         }
     }

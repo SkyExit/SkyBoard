@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyBoard", "SkyBoard.csproj", "{6E056170-29DE-4F27-8974-EDA1C8E74461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyBoard", "SkyBoard.csproj", "{6E056170-29DE-4F27-8974-EDA1C8E74461}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F95F61DE-160D-441C-BC85-A27B496AA82F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

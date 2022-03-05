@@ -3,29 +3,29 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using NuGet.Configuration;
 
 namespace SkyBoard
 {
-    public partial class SmileyPage : Page
+    public partial class HistoryPage : Page
     {
-        public static String sSmiley;
-        public static String[] smi;
+        public static List<String> smi = new List<string>();
 
-        private int columnCount = 8-1; //Spalten
+        private int columnCount = 8 - 1; //Spalten
         private int tempC = 0;
         private int rowCount;
         private int tempR = 0;
 
-        public SmileyPage()
+        public HistoryPage()
         {
             InitializeComponent();
-            createEmojiList();
 
-            rowCount = smi.Length / 8;
+            rowCount = smi.Count / 8;
 
-            Grid myGrid = SmileyGrid;
+            Grid myGrid = HistoryGrid;
 
-            myGrid.Height = (590/12)*(rowCount+1);
+            myGrid.Height = (590 / 12) * (rowCount + 1);
             myGrid.Width = 360;
             myGrid.Margin = new Thickness(5, 0, 20, 0);
             myGrid.ShowGridLines = false;
@@ -41,18 +41,18 @@ namespace SkyBoard
             myGrid.ColumnDefinitions.Add(new ColumnDefinition());
             myGrid.ColumnDefinitions.Add(new ColumnDefinition());
 
-            for(int b = 0; b <= rowCount; b++)
+            for (int b = 0; b <= rowCount; b++)
             {
                 myGrid.RowDefinitions.Add(new RowDefinition());
             }
 
-            for (int i = 0; i < smi.Length; i++)
+            for (int i = 0; i < smi.Count; i++)
             {
-                if(tempC > columnCount)
+                if (tempC > columnCount)
                 {
                     tempC = 0;
                     tempR++;
-                    if(tempR > rowCount)
+                    if (tempR > rowCount)
                     {
                         return;
                     }
@@ -78,16 +78,13 @@ namespace SkyBoard
         private async void ButDeletOnPreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             Emoji.Wpf.TextBlock textBlock = (Emoji.Wpf.TextBlock)sender;
-            await MainWindow.copyToClipboard(textBlock.Text, true);
+            await MainWindow.copyToClipboard(textBlock.Text, false);
         }
 
-        public void createEmojiList()
+        public static void addToHistory(String emoji)
         {
-        sSmiley = "😀,😃,😄,😁,😆,😅,🤣,😂,🙂,🙃,😉,😊,😇,🥰,😍,🤩,😘,😗,☺️,😚,😙,🥲,😋,😛,😜,🤪,😝,🤑,🤗,🤭,🤫,🤔,🤐,🤨,😐,😑,😶," + 
-                "😏,😒,🙄,😬,😮,💨,🤥,😌,😔,😪,🤤,😴,😷,🤒,🤕,🤢,🤮,🤧,🥵,🥶,🥴,😵,💫,🤯,🤠,🥳,🥸,😎,🤓,🧐,😕,😟,🙁,☹️,😮,😯,😳," + 
-                "🥺,😦,😧,😨,😰,😥,😢,😭,😱,😖,😣,😞,😓,😩,😫,🥱,😤,😡,😠,🤬,😈,👿,💀,☠️,💩,🤡,👹,👺,👻,👽,👾,🤖,😺,😸,😹,😻,😼,😽," + 
-                "🙀,😿,😾,🙈,🙉,🙊";
-            smi = sSmiley.Split(",");
+            smi.Add(emoji);
+            Properties.Settings.Default.History = smi.ToString();
         }
     }
 }

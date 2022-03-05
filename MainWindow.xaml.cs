@@ -15,14 +15,30 @@ using System.Windows.Shapes;
 
 namespace SkyBoard
 {
-
     public partial class MainWindow : Window
     {
+
+        public static MainWindow Instance { get; private set; }
+
         public MainWindow()
         {
             InitializeComponent();
 
             MainScreen();
+            Instance = this;
+        }
+
+        public static async Task copyToClipboard(String emoji, bool addToHistory)
+        {
+            System.Windows.Clipboard.SetText(emoji);
+
+            MainWindow mainWindow = Instance;
+            Button copyButton = mainWindow._CopyButton;
+            copyButton.Content = "📋 Copied to Clipboard";
+            copyButton.Visibility = Visibility.Visible;
+            if(addToHistory) HistoryPage.smi.Add(emoji); //Add to History
+            await Task.Delay(1500);
+            copyButton.Visibility = Visibility.Hidden;
         }
 
         private void MainScreen()
@@ -37,32 +53,37 @@ namespace SkyBoard
 
         private void ButtonHistory_Click(object sender, RoutedEventArgs e)
         {
-
+            _ContentFrame.Navigate(new HistoryPage());
         }
 
         private void ButtonSmiley_Click(object sender, RoutedEventArgs e)
         {
-            MainScreen();
+            _ContentFrame.Navigate(new SmileyPage());
         }
 
         private void ButtonAnimals_Click(object sender, RoutedEventArgs e)
         {
-
+            _ContentFrame.Navigate(new AnimalPage());
         }
 
         private void ButtonFlower_Click(object sender, RoutedEventArgs e)
         {
+            _ContentFrame.Navigate(new FlowerPage());
+        }
 
+        private void ButtonHand_Click(object sender, RoutedEventArgs e)
+        {
+            _ContentFrame.Navigate(new HandPage());
+        }
+
+        private void ButtonHuman_Click(object sender, RoutedEventArgs e)
+        {
+            _ContentFrame.Navigate(new HumanPage());
         }
 
         private void ButtonSettings_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void ButtonInfo_Click(object sender, RoutedEventArgs e)
-        {
-            _ContentFrame.Navigate(new InfoPage());
         }
     }
 }

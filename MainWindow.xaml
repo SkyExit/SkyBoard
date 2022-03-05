@@ -29,17 +29,25 @@
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonFlower_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
                     <materialDesign:PackIcon Kind="Flower" Foreground="#FFA2A2A2" Width="25" Height="25" />
                 </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHand_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="HandBackLeft" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHuman_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Human" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonSettings_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
                     <materialDesign:PackIcon Kind="Settings" Foreground="#FFA2A2A2" Width="25" Height="25" />
-                </Button>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonInfo_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                    <materialDesign:PackIcon Kind="InfoCircle" Foreground="#FFA2A2A2" Width="25" Height="25" />
                 </Button>
             </StackPanel>
         </Grid>
 
-        <ScrollViewer Margin="0,60,0,0" VerticalScrollBarVisibility="Hidden">
-            <Frame x:Name="_ContentFrame" NavigationUIVisibility="Hidden" Margin="0,0,0,0"/>
-        </ScrollViewer>
+        <StackPanel Margin="0,60,0,0">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Stretch" Height="550">
+                <Frame x:Name="_ContentFrame" NavigationUIVisibility="Hidden" Margin="0,0,0,0"></Frame>
+            </ScrollViewer>
+            <Button x:Name="_CopyButton" Visibility="Hidden" Content="Button" Margin="0,-80,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Center" 
+                    Width="192" Cursor="Hand" Background="#FF96ED39" BorderBrush="{x:Null}" Foreground="Black" FontWeight="Bold" FontFamily="Arial"/>
+        </StackPanel>
+        
     </Grid>
 </Window>

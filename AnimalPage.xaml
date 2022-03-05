@@ -1,4 +1,4 @@
-﻿<Page x:Class="SkyBoard.SmileyPage"
+﻿<Page x:Class="SkyBoard.AnimalPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"
       xmlns:local="clr-namespace:SkyBoard" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d"
-      Title="SmileyPage" Width="400">
+      Title="AnimalPage" Width="400">
 
     <Grid x:Name="SmileyGrid"/>
 </Page>
