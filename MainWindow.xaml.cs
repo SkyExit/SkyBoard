@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,10 +9,11 @@ namespace SkyBoard
 {
     public partial class MainWindow : Window
     {
-
         public static MainWindow Instance { get; private set; }
 
-        private String version = "v0.9.7";
+        private String version = "v0.10.4";
+        private String vString;
+        private bool upToDate = false;
         private String darkModeColor = "#1f1d19";
         private String whiteModeColor = "#f0f0f0";
 
@@ -21,6 +23,8 @@ namespace SkyBoard
 
             MainScreen();
             Instance = this;
+
+            CheckForUpdates();
 
             switchDarkMode(Properties.Settings.Default.DarkMode);
         }
@@ -53,6 +57,25 @@ namespace SkyBoard
             await Task.Delay(1500);
             copyButton.Visibility = Visibility.Hidden;
         }
+
+            private void CheckForUpdates()
+            {
+                try
+                {
+                    WebClient webClient = new WebClient();
+                    String onlineString = webClient.DownloadString("https://raw.githubusercontent.com/SkyExit/SkyBoard/master/MainWindow.xaml.cs");
+                    String searchS = "private String version =";
+                    String[] sString = onlineString.Substring(onlineString.IndexOf(searchS) + searchS.Length).Split(";");
+                    vString = sString[0].Replace('"', ' ').Trim();
+
+                    upToDate = version.Equals(vString) ? true : false;
+                }
+
+                catch (Exception ex)
+                {
+                
+                }
+            }
 
         private void MainScreen()
         {
@@ -96,7 +119,7 @@ namespace SkyBoard
 
         private void ButtonSettings_Click(object sender, RoutedEventArgs e)
         {
-            _ContentFrame.Navigate(new SettingsPage(version));
+            _ContentFrame.Navigate(new SettingsPage(version, upToDate, vString));
         }
     }
 }

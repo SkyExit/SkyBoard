@@ -8,9 +8,13 @@
       Height="550" Width="400"
       Title="SettingsPage">
 
-    <Grid>
+    <Grid Cursor="Hand">
         <TextBlock Name="SettingsVersion" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="v0.0.0" VerticalAlignment="Top" FontSize="48" TextDecorations="{x:Null}" Foreground="White" FontWeight="Bold" FontStyle="Italic"/>
-        <CheckBox x:Name="DarkModeCheckBox" Content="DarkMode" Click="DarkMode_Click" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FlowDirection="RightToLeft" Padding="180,0,0,0" Background="#FF008EFF" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="DarkModeCheckBox" Content="DarkMode" Click="DarkMode_Click" HorizontalAlignment="Center" 
+                  Margin="0,100,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" FlowDirection="RightToLeft" Padding="180,0,0,0" 
+                  Background="#FF008EFF" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="UpdateButton" Visibility="Visible" Click="UpdateButton_Click" Height="40" Width="250" Cursor="Hand" Content="update available" FontWeight="Bold" FontSize="22"></Button>
 
     </Grid>
 </Page>

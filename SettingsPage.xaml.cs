@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -11,7 +12,7 @@ namespace SkyBoard
 
         public static SettingsPage SettingsInstance { get; private set; }
 
-        public SettingsPage(String version)
+        public SettingsPage(String version, bool upToDate, String latestVersion)
         {
             InitializeComponent();
 
@@ -21,6 +22,21 @@ namespace SkyBoard
             
             DarkModeCheckBox.IsChecked = Properties.Settings.Default.DarkMode;
             switchColor(Properties.Settings.Default.DarkMode);
+
+            showUpdateContent(upToDate, latestVersion);
+        }
+
+        private void showUpdateContent(bool state, String latestV)
+        {
+            if(!state) //Is not UpToDate
+            {
+                UpdateButton.Content = "Update: (" + latestV + ")";
+                UpdateButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                UpdateButton.Visibility= Visibility.Hidden;
+            }
         }
 
         private void DarkMode_Click(object sender, RoutedEventArgs e)
@@ -57,6 +73,11 @@ namespace SkyBoard
                 SettingsVersion.Foreground = new SolidColorBrush(Colors.Black);
                 DarkModeCheckBox.Foreground = new SolidColorBrush(Colors.Black);
             }
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("explorer", "https://github.com/SkyExit/SkyBoard/releases");
         }
     }
 }
