@@ -1,7 +1,7 @@
 # SkyBoard
 
 Installation:
-- Download the SkyBoardSetup.exe from the [releases](https://github.com/SkyExit/SkyBoard/releases) Tab
+- Download the **SkyBoardSetup.exe** from the [releases](https://github.com/SkyExit/SkyBoard/releases) Tab
 - Install & Enjoy
 
 Features:
@@ -10,11 +10,12 @@ Features:
 - Click on emojis to copy them
 - Copy confirmation
 - Emoji click-history
+- Dark-/ WhiteMode switch
 
 ToDo-List:
 - Update check
 - Search emojis by name
 - History saves on quit
-- Animals, Flowers and more
+- ~~Animals, Flowers and more~~
 - Shortcuts to acces specific emojis faster
-- Settings for Autostart and Whitemode (if you are crazy)
+- Settings for Autostart and ~~Whitemode (if you are crazy)~~
