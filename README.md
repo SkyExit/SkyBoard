@@ -11,9 +11,10 @@ Features:
 - Copy confirmation
 - Emoji click-history
 - Dark-/ WhiteMode switch
+- Update checker in Settings-Tab
 
 ToDo-List:
-- Update check
+- ~~Update check~~
 - Search emojis by name
 - History saves on quit
 - ~~Animals, Flowers and more~~
