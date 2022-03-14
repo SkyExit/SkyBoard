@@ -11,7 +11,7 @@ namespace SkyBoard
     {
         public static MainWindow Instance { get; private set; }
 
-        private String version = "v0.10.4";
+        private String version = "v1.0.4";
         private String vString;
         private bool upToDate = false;
         private String darkModeColor = "#1f1d19";
@@ -120,6 +120,11 @@ namespace SkyBoard
         private void ButtonSettings_Click(object sender, RoutedEventArgs e)
         {
             _ContentFrame.Navigate(new SettingsPage(version, upToDate, vString));
+        }
+
+        private void ButtonSport_Click(object sender, RoutedEventArgs e)
+        {
+            _ContentFrame.Navigate(new SportPage());
         }
     }
 }

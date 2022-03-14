@@ -28,11 +28,14 @@
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonFlower_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
                     <materialDesign:PackIcon Kind="Flower" Foreground="#FFA2A2A2" Width="25" Height="25" />
                 </Button>
-                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHand_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                    <materialDesign:PackIcon Kind="HandBackLeft" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonSport_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="Soccer" Foreground="#FFA2A2A2" Width="25" Height="25" />
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHuman_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                    <materialDesign:PackIcon Kind="Human" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                    <materialDesign:PackIcon Kind="Lightbulb" Foreground="#FFA2A2A2" Width="25" Height="25" />
+                </Button>
+                <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonHand_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                    <materialDesign:PackIcon Kind="HashtagBox" Foreground="#FFA2A2A2" Width="25" Height="25" />
                 </Button>
                 <Button Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Click="ButtonSettings_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
                     <materialDesign:PackIcon Kind="Settings" Foreground="#FFA2A2A2" Width="25" Height="25" />
