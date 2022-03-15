@@ -11,7 +11,7 @@ namespace SkyBoard
     {
         public static MainWindow Instance { get; private set; }
 
-        private String version = "v1.0.8";
+        private String version = "v1.0.9";
         private String vString;
         private bool upToDate = false;
         private String darkModeColor = "#1f1d19";
